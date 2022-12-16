@@ -7,19 +7,26 @@ qual deles é o maior.
 
 
 from time import sleep
-n = 0
-def maior(*num):
+
+def maior(* num):
+    cont = m = 0
     print('-=' * 40)
     print('Analizando valores passados...')
     for c in num:
         print(c , end=' ', flush=True )
         sleep(0.3)
-    print(f'Foram informados {len(num)} valores ao todo. ')
-    for c in num:
-        if c > n:
-            n = c
-    print(f'O maior valor iformado foi {n}')
+        if cont == 0:
+            m = c
+        else:
+            if c > m:
+                m > c
+        cont += 1
+    print(f'Foram informados {cont} valores ao todo. ')    
+    print(f'O maior valor iformado foi {m}.')
 
 
 maior(2, 9, 4, 5, 7, 1)
+maior(4, 7, 0)
+maior(1, 2)
+maior(6)
 maior()
